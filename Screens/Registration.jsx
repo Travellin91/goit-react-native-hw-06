@@ -14,10 +14,25 @@ const Registr = ({ navigation }) => {
   return (
     <>
       <Loader />
-      <KeyboardAvoidingView
-        style={styles.keyboard}
-        behavior={Platform.OS === "android" ? "padding" : undefined}
-      >
+      {Platform.OS === "ios" ? (
+        <KeyboardAvoidingView
+          style={styles.keyboard}
+          behavior="padding"
+        >
+          <TouchableWithoutFeedback onPress={keyboardHide}>
+            <Container>
+              <Avatar />
+              <AuthForm type={"registr"} />
+              <Animated.Text
+                style={{ ...styles.link, ...marginСompensator }}
+                onPress={() => navigation.navigate("Login")}
+              >
+                Already have an account? Sign In
+              </Animated.Text>
+            </Container>
+          </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
+      ) : (
         <TouchableWithoutFeedback onPress={keyboardHide}>
           <Container>
             <Avatar />
@@ -30,7 +45,7 @@ const Registr = ({ navigation }) => {
             </Animated.Text>
           </Container>
         </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
+      )}
     </>
   );
 };
