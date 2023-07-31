@@ -21,7 +21,7 @@ const Login = ({ navigation }) => {
       <Loader />
       <KeyboardAvoidingView
         style={styles.keyboard}
-        behavior={Platform.OS == "ios" ? "padding" : "height"}
+        behavior={Platform.OS == "android" ? "padding" : "height"}
       >
         <TouchableWithoutFeedback onPress={keyboardHide}>
           <Container>
