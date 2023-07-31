@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "goit-react-native-hw-05",
-    "slug": "goit-react-native-hw-05",
+    "name": "goit-react-native-hw-06",
+    "slug": "goit-react-native-hw-06",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -31,6 +31,13 @@
         "expo-camera",
         {
           "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+        }
+        
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
       ]
     ]
