@@ -4,13 +4,7 @@ import Loader from "../components/Loader";
 import { useKeyboard } from "../services/hooks";
 import Container from "../components/Container/Container";
 import styles from "../components/AuthForm/AuthForm.styles";
-import {
-  Platform,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  Keyboard,
-  Animated,
-} from "react-native";
+import { Platform, TouchableWithoutFeedback, Keyboard, Animated } from "react-native";
 
 const Login = ({ navigation }) => {
   const keyboardHide = () => Keyboard.dismiss();
@@ -19,23 +13,18 @@ const Login = ({ navigation }) => {
   return (
     <>
       <Loader />
-      <KeyboardAvoidingView
-        style={styles.keyboard}
-        behavior={Platform.OS == "android" ? "padding" : "height"}
-      >
-        <TouchableWithoutFeedback onPress={keyboardHide}>
-          <Container>
-            <AuthForm type={"auth"} />
+      <TouchableWithoutFeedback onPress={keyboardHide}>
+        <Container>
+          <AuthForm type={"auth"} />
 
-            <Animated.Text
-              style={{ ...styles.link, ...marginСompensator }}
-              onPress={() => navigation.navigate("Registr")}
-            >
-              Don't have an account? Sign Up
-            </Animated.Text>
-          </Container>
-        </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
+          <Animated.Text
+            style={{ ...styles.link, ...marginСompensator }}
+            onPress={() => navigation.navigate("Registr")}
+          >
+            Don't have an account? Sign Up
+          </Animated.Text>
+        </Container>
+      </TouchableWithoutFeedback>
     </>
   );
 };
