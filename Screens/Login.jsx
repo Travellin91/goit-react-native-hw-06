@@ -30,7 +30,6 @@ const Login = ({ navigation }) => {
       <TouchableWithoutFeedback onPress={keyboardHide}>
         <Container>
           <AuthForm type={"auth"} login={login} handleLogin={handleLogin} />
-          {/* Передаємо логін та функцію handleLogin у компонент AuthForm */}
           <Animated.Text
             style={{ ...styles.link, ...marginСompensator }}
             onPress={() => navigation.navigate("Registr")}
